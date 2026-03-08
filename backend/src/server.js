@@ -12,7 +12,11 @@ import transactionRoutes from './routes/transactionRoutes.js';
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://bank-account-management-2.onrender.com",
+  })
+);
 
 app.use('/api/accounts', accountRoutes);
 app.use('/api/transactions', transactionRoutes);
